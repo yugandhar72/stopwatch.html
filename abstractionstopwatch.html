@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stop watch</title>
+    <style>
+        *{
+            background-color: brown;
+        }
+        div{
+            text-align: center;
+            margin-top: 400px;
+            background-color: azure;
+            padding: 30px;
+        }
+        #milli{
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+ 
+  <div>
+    <h1>STOP WATCH</h1>
+    <p id="milli"></p>
+    <button id="stop" onclick="stop()">stop</button>
+    <button id="start" onclick="start()">start</button>
+    <button id="reset" onclick="reset()">reset</button>
+  </div>
+        
+        <script>
+
+
+        let water=()=>{
+            confirm("drink water")
+        }
+
+        let fun=setInterval(water,10000)
+        console.log(fun)
+
+        setTimeout(()=>{
+            confirm("its time to dink water")
+        },60*60*1000)
+
+
+
+            let p_ele = document.getElementById("milli");
+        
+            let count = 0;
+            let fnc;
+        
+            function watch() {
+                count++;
+                p_ele.innerText = count;
+            }
+        
+            // Start the interval when the page loads
+            function start() {
+                fnc = setInterval(watch, 100);  // Update every 1 millisecond
+            }
+        
+            // Stop the interval
+            function stop() {
+                clearInterval(fnc);
+            }
+        
+            function reset(){
+                count=0
+            }
+            // Start the stopwatch immediately
+            // start();
+        </script>
+        
+    </script>
+</body>
+</html>
